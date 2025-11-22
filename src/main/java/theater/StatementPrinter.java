@@ -67,7 +67,8 @@ public class StatementPrinter {
                     thisAmount / Constants.PERCENT_FACTOR), p.getAudience()));
             totalAmount += thisAmount;
         }
-        result.append(String.format("Amount owed is %s%n", format.format(totalAmount / Constants.PERCENT_FACTOR)));
+        result.append(String.format("Amount owed is %s%n", format.format(
+                totalAmount / Constants.PERCENT_FACTOR)));
         result.append(String.format("You earned %s credits%n", volumeCredits));
         return result.toString();
     }
