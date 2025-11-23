@@ -23,7 +23,7 @@ public class StatementPrinter {
      */
 
     public String statement() {
-        final int volumeCredits = getVolumeCredits();
+        final int volumeCredits = getTotalVolumeCredits();
         final int totalAmount = getTotalAmount();
 
         final StringBuilder result = new StringBuilder(
@@ -48,7 +48,7 @@ public class StatementPrinter {
         return result;
     }
 
-    private int getVolumeCredits() {
+    private int getTotalVolumeCredits() {
         int result = 0;
         for (Performance p : invoice.getPerformances()) {
             result += getVolumeCredits(p);
@@ -71,8 +71,8 @@ public class StatementPrinter {
         return result;
     }
 
-    private Play getPlay(Performance p) {
-        return plays.get(p.getPlayID());
+    private Play getPlay(Performance performance) {
+        return plays.get(performance.getPlayID());
     }
 
     private int getAmount(Performance performance) {
